@@ -28,21 +28,23 @@
 
 const customerAndAge = (obj) => {
   // write your code here
-  let answer= ""
+  let answerArry=[]
   for(const property in obj){
  
-   answer= `Customer Name :${property} , Age:${obj[property]}`
-   console.log(answer)
+   let answer= `Customer Name :${property} , Age :${obj[property]}`
+  answerArry.push(answer)
+  //  console.log(answerArry)
 }
+return answerArry
  
 };
 
- customerAndAge({
-      "Romio Joliat": 35,
-      "Mario Ristrova": 39,
-      "Sofia firnando": 50,
-  })
-
+//  let a=customerAndAge({
+//       "Romio Joliat": 35,
+//       "Mario Ristrova": 39,
+//       "Sofia firnando": 50,
+//   })
+// console.log(a)
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -138,10 +140,10 @@ const getStudents = (arr) => {
 };
 //  ------------------------------------------------------------------------------------------------------
 
-// module.exports = {
-//   customerAndAge,
-//   getEntries,
-//   courses,
-//   getInfo,
-//   getStudents,
-// };
+module.exports = {
+  customerAndAge,
+  getEntries,
+  courses,
+  getInfo,
+  getStudents,
+};
