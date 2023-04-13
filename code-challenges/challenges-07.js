@@ -105,22 +105,18 @@ const cvFormatter = (arr) => {
 
           if (arr[i].firstName === null) {
               fullName = arr[i].lastName;
-              console.log("gggggg")
             }
             else if (arr[i].lastName === null) {
                 fullName = arr[i].firstName;
-              console.log("g")
-
-            }
-            
-        // }
-      outPutArr[i] = {
-        fullName,
-        tech,
-      };
-      console.log(outPutArr)
+                
+              }
+              
+              // }
+       let answerx={fullName,tech}
+      outPutArr.push(answerx)
     }
-}
+  }
+  console.log(outPutArr)
 return outPutArr;
 };
 cvFormatter(cvs);
