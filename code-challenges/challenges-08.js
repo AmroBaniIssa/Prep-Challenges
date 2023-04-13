@@ -56,12 +56,12 @@ return answerArry
 // as in the example
 
 // Input:
-// let recipeInfo = {
-//   name: "pizza",
-//   ingredients: ["bread", "tomato", "chicken", "mayo"],
-//   cookTime: "twoHours",
-//   price: "25$",
-// };
+let recipeInfo = {
+  name: "pizza",
+  ingredients: ["bread", "tomato", "chicken", "mayo"],
+  cookTime: "twoHours",
+  price: "25$",
+};
 //
 // Output:
 // ["name: pizza", "ingredients: bread,tomato,chicken,mayo", "cookTime: twoHours", "price: 25$"]
@@ -71,7 +71,16 @@ return answerArry
 
 const getEntries = (obj) => {
   // write your code here
+  let answerArry2=[]
+  for (const [key, value] of Object.entries(obj)) {
+   let answer=(`${key}: ${value}`);
+   answerArry2.push(answer);
+  }
+  // console.log(answerArry2);
+return answerArry2
+
 };
+getEntries(recipeInfo)
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------

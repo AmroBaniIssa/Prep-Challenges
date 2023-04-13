@@ -93,37 +93,72 @@ let cvs = [
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
+// const cvFormatter = (arr) => {
+//   // write your code here
+//   const outPutArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if(arr[i].yearsOfExperience < 1){
+
+//     }
+//      else (arr[i].yearsOfExperience >1) {
+//           let tech = arr[i].tech;
+//           let fullName = ""
+//           //   for(let j=0;j<arr.length;j++){
+
+//             if (arr[i].firstName === null) {
+//               fullName = arr[i].lastName;
+//               console.log("gggggg")
+//             }
+//             else if (arr[i].lastName === null) {
+//               fullName = arr[i].firstName;
+//               console.log("g")
+
+//             }else{
+//               fullName=arr[i].firstName+" "+arr[i].lastName;
+//                    }
+
+//         // }
+//       outPutArr[i] = {
+//         fullName,
+//         tech,
+//       };
+
+//   }
+//   //
+//   console.log(outPutArr)
+//   return outPutArr;
+// }};
+// cvFormatter(cvs);
 const cvFormatter = (arr) => {
-  // write your code here
   const outPutArr = [];
+  let fullName = "";
+  
   for (let i = 0; i < arr.length; i++) {
-      if (arr[i].yearsOfExperience >1) {
-          let tech = arr[i].tech;
-          let fullName = ""
-          fullName=arr[i].firstName+" "+arr[i].lastName;
-        //   for(let j=0;j<arr.length;j++){
+    let tech = arr[i].tech;
+    if(arr[i].yearsOfExperience >1) {
+    if (arr[i].firstName === null) {
+      fullName = arr[i].lastName;
 
-          if (arr[i].firstName === null) {
-              fullName = arr[i].lastName;
-              console.log("gggggg")
-            }
-            else if (arr[i].lastName === null) {
-                fullName = arr[i].firstName;
-              console.log("g")
+    } else if (arr[i].lastName === null) {
+      fullName = arr[i].firstName;
 
-            }
-            
-        // }
+    } else {
+      fullName = arr[i].firstName + " " + arr[i].lastName;
+    }
+  
       outPutArr[i] = {
         fullName,
         tech,
       };
-      console.log(outPutArr)
     }
-}
-return outPutArr;
+    // else{
+    //   outPutArr[i]=""
+    // }
+  }
+  console.log(outPutArr)
 };
 cvFormatter(cvs);
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
