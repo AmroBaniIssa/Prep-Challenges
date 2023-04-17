@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Important Note:
 // Kindly use forEach loop instead of for in all of your solutions
@@ -11,83 +11,82 @@
 // Required:
 
 //  Write a function that takes an array of numbers and increase the values by 10
-//  
+//
 //  Input:
 //  [20, 54, 89, 41]
 //  Output:
 //  [30, 64, 99, 51]
-//  
+//
 
 const arrInc = (arr) => {
-    let result = [];
-arr.forEach(element => {
-     result.push(element+10);   
-    });
-    // write your code here
-    return result;
-}
+  let result = [];
+  arr.forEach((element) => {
+    result.push(element + 10);
+  });
+  // write your code here
+  return result;
+};
 // -------------------------------------------------------------------------------------------------------
-
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 02:
 // Required:
 
-//  Write a function that takes an array of decimals and round every value to the closest value 
-//  
+//  Write a function that takes an array of decimals and round every value to the closest value
+//
 //  Input:
-//  [5.4, 5.5 ,6.7, 6.8] 
+//  [5.4, 5.5 ,6.7, 6.8]
 //  Output:
 //  [5, 6, 7, 7]
-// 
+//
 const roundDecimals = (arr) => {
-    // write your code here
-    let answer = [];
+  // write your code here
+  let answer = [];
 
-    arr.forEach(element => {
-     answer.push(Math.round(element));   
-    });
-    // console.log( answer)
-    return answer 
-}
-roundDecimals( [5.4, 5.5 ,6.7, 6.8])
+  arr.forEach((element) => {
+    answer.push(Math.round(element));
+  });
+  // console.log( answer)
+  return answer;
+};
+roundDecimals([5.4, 5.5, 6.7, 6.8]);
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 03:
 // Required:
-// 
+//
 // An owner of a factory wants to give a 100$ bonus for production department employees who worked *More than* 8 hours
-// and 50$ for those who worked less, given their data increase their salary and return the data back again 
-//  
+// and 50$ for those who worked less, given their data increase their salary and return the data back again
+//
 // Input:
 let data = [
-    {
-        name: "Robert",
-        section: "Transport",
-        workHours: 8,
-        salary: "3000$"
-    },
-    {
-        name: "Richard",
-        section: "HR",
-        workHours: 6,
-        salary: "4000$"
-    },
-    {
-        name: "Christopher",
-        section: "Production",
-        workHours: 10,
-        salary: "4500$"
-    },
-    {
-        name: "Andrew",
-        section: "HouseKeeping",
-        workHours: 9,
-        salary: "3200$"
-    }
-]
-// 
+  {
+    name: "Robert",
+    section: "Transport",
+    workHours: 8,
+    salary: "3000$",
+  },
+  {
+    name: "Richard",
+    section: "HR",
+    workHours: 6,
+    salary: "4000$",
+  },
+  {
+    name: "Christopher",
+    section: "Production",
+    workHours: 10,
+    salary: "4500$",
+  },
+  {
+    name: "Andrew",
+    section: "HouseKeeping",
+    workHours: 9,
+    salary: "3200$",
+  },
+];
+//
 // Output:
 // [
 //     {
@@ -118,41 +117,55 @@ let data = [
 //
 
 const employeesBonus = (arr) => {
-    // write your code here
-    arr.forEach(element => {
-        let bonus=0
-        if(element.workHours>8){
-            element.salary= parseInt(element.salary)+100
-            bonus = element.salary
-            let x= bonus.toString()
-            // element.salary = JSON.stringify(element.salary+"$")
-            console.log(bonus)
-            element.salary=x+"$"
-            console.log( element.salary)
-        }
-        
-        else {
-         element.salary = parseInt(element.salary) +50
-         bonus = element.salary
+  // write your code here
+  arr.forEach((element) => {
+    let bonus = 0;
+    if (element.workHours > 8) {
+      element.salary = parseInt(element.salary) + 100;
+      bonus = element.salary;
+      let x = bonus.toString();
+      // element.salary = JSON.stringify(element.salary+"$")
+      console.log(bonus);
+      element.salary = x + "$";
+      console.log(element.salary);
+    } else {
+      element.salary = parseInt(element.salary) + 50;
+      bonus = element.salary;
 
-         let y= bonus.toString()
-         element.salary=y+"$"
+      let y = bonus.toString();
+      element.salary = y + "$";
 
-
-        //  element.salary = JSON.stringify(element.salary+"$")
-        //  element.salary.toString()
-        //  console.log(  element.salary)
-         // string
-        }
+      //  element.salary = JSON.stringify(element.salary+"$")
+      //  element.salary.toString()
+      //  console.log(  element.salary)
+      // string
     }
-    
-    );
+  });
 
-    console.log(arr)
-    return arr
-}
-employeesBonus(data)
+  console.log(arr);
+  return arr;
+};
+// employeesBonus(data)
 // -------------------------------------------------------------------------------------------------------
+
+let candles = [4, 1, 2, 4,5,5,5];
+function birthdayCakeCandles(candles) {
+  // Write your code here
+  let y = 1;
+  let x = 0;
+  for (let i = 0; i < candles.length; i++) {
+    // if (x == candles[i]) {
+    //     // y=1;
+    // }
+  else   if (x < candles[i]) {
+      y += 1;
+      x = candles[i];
+    }
+  }
+  console.log(y);
+  return y;
+}
+birthdayCakeCandles(candles);
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 04:
@@ -161,17 +174,17 @@ employeesBonus(data)
 // Harry wants to buy a new mouse and keyboard for his new setup
 // He wants to choose one mouse and one keyboard from the list of prices and take the most expensive combination
 // but his budget is limited, help him by finding the most expensive *price* for a combination to buy with his budget
-// 
+//
 // Input:
 // budget = 200$
 // mouseArray = [35, 15, 75, 180, 150, 50]
 // keyBoardArray = [5, 150, 35, 120, 75, 50, 100]
-// 
+//
 // Output: 200
 
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
-    // write your code here
-}
+  // write your code here
+};
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { arrInc, roundDecimals, employeesBonus, mostExpensive };
