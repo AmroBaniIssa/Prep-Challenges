@@ -148,24 +148,27 @@ const employeesBonus = (arr) => {
 // employeesBonus(data)
 // -------------------------------------------------------------------------------------------------------
 
-let candles = [4, 1, 2, 4,5,5,5];
+let candles = [18, 90, 90, 13, 90, 75, 90, 8, 90, 43];
 function birthdayCakeCandles(candles) {
   // Write your code here
-  let y = 1;
+  let y = 0;
   let x = 0;
   for (let i = 0; i < candles.length; i++) {
-    // if (x == candles[i]) {
-    //     // y=1;
-    // }
-  else   if (x < candles[i]) {
+    if (x != candles[i] && x < candles[i]) {
+      y = 0;
+      console.log(y);
+      console.log(x);
+    }
+    if (x <= candles[i]) {
       y += 1;
       x = candles[i];
+      console.log("..." + y);
+      console.log("..." + x);
     }
   }
-  console.log(y);
   return y;
 }
-birthdayCakeCandles(candles);
+console.log(birthdayCakeCandles(candles));
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 04:

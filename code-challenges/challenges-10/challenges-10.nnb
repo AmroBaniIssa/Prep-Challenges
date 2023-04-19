@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "let candles = [4, 1, 2, 4,5,5,5];\nfunction birthdayCakeCandles(candles) {\n  // Write your code here\n  let y = 1;\n  let x = 0;\n  for (let i = 0; i < candles.length; i++) {\n    // if (x == candles[i]) {\n    //     // y=1;\n    // }\n  else   if (x < candles[i]) {\n      y += 1;\n      x = candles[i];\n    }\n  }\n  console.log(y);\n  return y;\n}\nbirthdayCakeCandles(candles);"
+                "let candles = [18, 90, 90, 13, 90, 75, 90, 8, 90, 43];\nfunction birthdayCakeCandles(candles) {\n  // Write your code here\n  let y = 0;\n  let x = 0;\n  for (let i = 0; i < candles.length; i++) {\n    if (x != candles[i] && x < candles[i]) {\n      y = 0;\n      console.log(y);\n      console.log(x);\n    }\n    if (x <= candles[i]) {\n      y += 1;\n      x = candles[i];\n      console.log(\"...\" + y);\n      console.log(\"...\" + x);\n    }\n  }\n  return y;\n}\nconsole.log(birthdayCakeCandles(candles));"
             ],
             "outputs": []
         },
