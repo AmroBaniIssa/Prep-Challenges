@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Important Note:
 // Kindly use map loop instead of for in all of your solutions
@@ -9,19 +9,19 @@
 // -------------------------------------------------------------------------------------------------------
 // Challenge 01:
 // Required:
-// 
+//
 // Given an array of values use map to calculate the square of the values.
-//  
+//
 // Input: [ 2, 8, 3, 5 ]
 // Output: [ 4, 64, 9, 25 ]
-// 
+//
 
 function square(arr) {
-    // write your code here
-    const answer= arr.map((num)=> num * num)
-    return answer;
+  // write your code here
+  const answer = arr.map((num) => num * num);
+  return answer;
 }
-console.log(square( [ 2, 8, 3, 5 ]))
+// console.log(square( [ 2, 8, 3, 5 ]))
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -32,81 +32,80 @@ console.log(square( [ 2, 8, 3, 5 ]))
 //
 // note: the full names should be combined between student's first and last names.
 //
-const Input1=
-[
-    {
-        firstName: 'Adam',
-        lastName: 'Anderson',
-    },
-    {
-        firstName: 'Ben',
-        lastName: 'Zeller',
-    }, 
-    {
-        firstName: 'Peter',
-        lastName: 'Mccord',
-    },
-    {
-        firstName: 'Fred',
-        lastName: 'Sagar',
-    },
-    {
-        firstName: 'Nathan',
-        lastName: 'Weiss',
-    }
-]
+const Input1 = [
+  {
+    firstName: "Adam",
+    lastName: "Anderson",
+  },
+  {
+    firstName: "Ben",
+    lastName: "Zeller",
+  },
+  {
+    firstName: "Peter",
+    lastName: "Mccord",
+  },
+  {
+    firstName: "Fred",
+    lastName: "Sagar",
+  },
+  {
+    firstName: "Nathan",
+    lastName: "Weiss",
+  },
+];
 //
 // Output: ['Adam Anderson', 'Ben Zeller', 'Peter Mccord', 'Fred Sagar', 'Nathan Weiss']
 
 function fullName(arr) {
-    // write your code here
-    const answerx=[];
-    const answer= arr.map( theFullName )
-    function theFullName(element){
-        let firstN= element.firstName;
-        let lastN = element.lastName;
-        let x=firstN+" "+lastN
-        answerx.push(x)
-        // console.log([firstN+" "+lastN])
-        // console.log(answerx);
-    }
-    return answerx
+  // write your code here
+  const answerx = [];
+  const answer = arr.map(theFullName);
+  function theFullName(element) {
+    let firstN = element.firstName;
+    let lastN = element.lastName;
+    let x = firstN + " " + lastN;
+    answerx.push(x);
+    // console.log([firstN+" "+lastN])
+    // console.log(answerx);
+  }
+  return answerx;
 }
-console.log(fullName(Input1))
+// console.log(fullName(Input1))
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 03:
 // optional:
 
-// Given an array of objects use map to calculate the average of the grades 
+// Given an array of objects use map to calculate the average of the grades
 // and return an array of the objects with a new property called avg (that represent the average of the grades).
-//  
+//
 
 // Input:
-// var students = [
-// 	{
-// 			firstName: 'Adam',
-//      lastName: 'Anderson',
-// 			gradsList: [20, 50, 13, 11, 2, 45, 60, 29]
-// },
-// {
-// 			firstName: 'Ben',
-//      lastName: 'Zeller',
-// 			gradsList: [20, 10, 11, 11, 2, 5, 3, 2]
-// },
-// {
-// 			firstName: 'Peter',
-//      lastName: 'Mccord',
-// 	    gradsList: [62, 50, 80, 90, 39, 45, 60, 50]
-// },
-// {
-// 			firstName: 'Fred',
-//      lastName: 'Sagar',
-// 			gradsList: [20, 10, 18, 11, 2, 20, 3, 10]
-// }
-// ]
-//
+const students = [
+  {
+    firstName: "Adam",
+    lastName: "Anderson",
+    gradsList: [20, 50, 13, 11, 2, 45, 60, 29],
+  },
+  {
+    firstName: "Ben",
+    lastName: "Zeller",
+    gradsList: [20, 10, 11, 11, 2, 5, 3, 2],
+  },
+  {
+    firstName: "Peter",
+    lastName: "Mccord",
+    gradsList: [62, 50, 80, 90, 39, 45, 60, 50],
+  },
+  {
+    firstName: "Fred",
+    lastName: "Sagar",
+    gradsList: [20, 10, 18, 11, 2, 20, 3, 10],
+  },
+];
+
 // Output:
 // [
 // 	{
@@ -137,8 +136,35 @@ console.log(fullName(Input1))
 // -------------
 
 function gradesAvg(arr) {
-    // write your code here
+  // write your code here\
+  const answerx = [];
+//   let sum = 0;
+  let avgOfArray =0;
+  const answer = arr.map(avg);
+  function avg(element, i) {
+    // console.log(element.gradsList[i]);
+    // console.log(element.gradsList);
+    let gradsListArr = element.gradsList;
+  let sum = 0;
+
+    for (i = 0; i <= gradsListArr.length; i++) {
+      sum = sum + gradsListArr[i];
+      
+      avgOfArray = sum/ gradsListArr.length
+      gradsListArr.avgr[i]=avgOfArray;
+      console.log(sum);
+      console.log(avgOfArray);
+      console.log(gradsListArr);
+
+    }
+    // answerx.push(x);
+    // console.log([firstN+" "+lastN])
+    // console.log(answerx);
+    // console.log(element.gradsList[i]);
 }
+return answerx;
+}
+console.log(gradesAvg(students));
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -146,7 +172,7 @@ function gradesAvg(arr) {
 // Optional:
 //
 // Using the previous function result, determine if the student pass or failed,
-// and return the array of the objects with a new property called result (with Passed or Failed) 
+// and return the array of the objects with a new property called result (with Passed or Failed)
 //
 // Note: if his/her avg equal or above 50 the result will be Passed, and Failed if it's less than that
 
@@ -177,7 +203,7 @@ function gradesAvg(arr) {
 //          avg: 11.75
 // 	}
 //]
-// 
+//
 // Output:
 // [
 // 	{
@@ -211,7 +237,7 @@ function gradesAvg(arr) {
 // ]
 
 function studentsResult(arr) {
-    // write your code here
+  // write your code here
 }
 // -------------------------------------------------------------------------------------------------------
 
