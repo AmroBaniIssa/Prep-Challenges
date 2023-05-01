@@ -18,8 +18,13 @@
 // 
 
 const oddFiltration = (arr) => {
+    let odd=arr.filter((num)=>{
+        return num % 2!==0;
+    })
     // write your code here
+    return odd
 }
+// console.log(oddFiltration([20, 54, 89, 41, 2, 31, 111, 15, 0, 31, 200]))
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -30,33 +35,33 @@ const oddFiltration = (arr) => {
 // and works as JS developer 
 
 // Input:
-// var cvs = [
-//     {
-//         firstName: "Jason",
-//         LastName: "James",
-//         yearsOfExperience: 20,
-//         tech: "JS"
-//     },
-//     {
-//         firstName: "Shira",
-//         LastName: null,
-//         yearsOfExperience: 5,
-//         tech: ".Net"
-//     },
-//     {
-//         firstName: "Dmitri",
-//         LastName: "Akkerman",
-//         yearsOfExperience: 1,
-//         tech: "Python"
-//     },
-//     {
-//         firstName: "Isabella",
-//         LastName: null,
-//         yearsOfExperience: 4,
-//         tech: "Java"
-//     }
-// ]
-//
+var cvs = [
+    {
+        firstName: "Jason",
+        LastName: "James",
+        yearsOfExperience: 20,
+        tech: "JS"
+    },
+    {
+        firstName: "Shira",
+        LastName: null,
+        yearsOfExperience: 5,
+        tech: ".Net"
+    },
+    {
+        firstName: "Dmitri",
+        LastName: "Akkerman",
+        yearsOfExperience: 1,
+        tech: "Python"
+    },
+    {
+        firstName: "Isabella",
+        LastName: null,
+        yearsOfExperience: 4,
+        tech: "Java"
+    }
+]
+
 // Output:
 // [
 //     {
@@ -70,8 +75,24 @@ const oddFiltration = (arr) => {
 //  2- If one of the names is null dont add it to the full name
 
 const cvsFiltration = (arr) => {
-    // write your code here
+
+    const result=[]
+    let candidates= arr.filter((cv)=>{
+        if(cv.yearsOfExperience>=4 &&cv.tech=="JS"){
+           let fullName=cv.firstName+" "+cv.LastName
+           let tech=cv.tech
+           let resultx={fullName,tech}
+           result.push(resultx)
+        }
+        return result
+    })
+    console.log(result)
+//    let fullName=candidates[firstName]
+//    console.log(fullName)
+    
+   return result
 }
+// console.log(cvsFiltration(cvs));
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -85,8 +106,23 @@ const cvsFiltration = (arr) => {
 // 
 
 const vowelsFiltration = (arr) => {
+    const res=[];
+    let vowels=arr.filter((vowel)=>{
+        let regexVowels=/[aeiou]/;
+        let str=vowel
+        // console.log(str)
+        // console.log(regexVowels.test(str))
+        if(regexVowels.test(str)==false){
+           console.log("hi")
+            res.push(vowel)
+            console.log(res)
+        }
+    })
     // write your code here
+    return res
 } 
+console.log(vowelsFiltration(['car', 'boy', 'spy', 'building', 'why', 'dry' ]));
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
