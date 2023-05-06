@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Resource:
 // split: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
@@ -16,7 +16,7 @@
 //
 // Note: consider that the string may have one word but never empty
 //
-let Input= "I did my waiting 12 years of it in Azkaban"
+let Input = "I did my waiting 12 years of it in Azkaban";
 // Output: "Azkaban"
 //
 // Input: "Impossible"
@@ -24,15 +24,13 @@ let Input= "I did my waiting 12 years of it in Azkaban"
 //
 
 const LastWord = (str) => {
-    // write your code here
-    let indexNumber= str.lastIndexOf(" ")//to git the index of last space
-    let x=str.slice(indexNumber+1,str.length);
-    console.log(indexNumber)
-    console.log(x)
-return x
-    
-
-}
+  // write your code here
+  let indexNumber = str.lastIndexOf(" "); //to git the index of last space
+  let x = str.slice(indexNumber + 1, str.length);
+  console.log(indexNumber);
+  console.log(x);
+  return x;
+};
 // console.log(LastWord(Input))
 // -------------------------------------------------------------------------------------------------------
 
@@ -46,16 +44,14 @@ return x
 //  Output: "potter"
 
 const LastWord_2 = (str) => {
-    // write your code here
-    let answer= str.split(" ")
-    let x=answer.slice(-1);
-    // console.log(str)
-    // console.log(answer)
-    // console.log(x)
-return x.toString()
-    
-
-}
+  // write your code here
+  let answer = str.split(" ");
+  let x = answer.slice(-1);
+  // console.log(str)
+  // console.log(answer)
+  // console.log(x)
+  return x.toString();
+};
 // console.log(LastWord_2(Input))
 
 // -------------------------------------------------------------------------------------------------------
@@ -79,37 +75,32 @@ return x.toString()
 //
 
 const replaceWords = (str) => {
-    // write your code here
-    const arr=str.split(" ")
-    console.log(arr)
-    let x=arr.indexOf("I");
-    let y=arr.indexOf("am");
-    let z=arr.indexOf("was");
-if(x>=0){
+  // write your code here
+  const arr = str.split(" ");
+  console.log(arr);
+  let x = arr.indexOf("I");
+  let y = arr.indexOf("am");
+  let z = arr.indexOf("was");
+  if (x >= 0) {
+    arr.splice(x, 1, "We");
+  }
+  if (y >= 0) {
+    arr.splice(y, 1, "are");
+  }
+  if (z >= 0) {
+    arr.splice(z, 1, "were");
+  }
 
-    arr.splice(x,1,"We")
-}
-if(y>=0){
-    arr.splice(y,1,"are")
+  console.log(x);
+  console.log(y);
+  console.log(z);
+  console.log(arr);
 
-}
-if(z>=0){
-
-    arr.splice(z,1,"were")
-}
-
-
-    console.log(x);
-    console.log(y);
-    console.log(z);
-    console.log(arr);
-
-   return arr.join(" ")
-}
-console.log(replaceWords("I thought you had a plan"))
-console.log(replaceWords("I was there 3000 years ago"))
-console.log(replaceWords("I am Venom"))
-
+  return arr.join(" ");
+};
+// console.log(replaceWords("I thought you had a plan"))
+// console.log(replaceWords("I was there 3000 years ago"))
+// console.log(replaceWords("I am Venom"))
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -119,13 +110,13 @@ console.log(replaceWords("I am Venom"))
 //
 // Write a function that "joins" the array of words together and puts a comma "," after every five words
 //
-// Input:["move","it","away","from","the","street"] 
-// Output: "move it away from the, street" 
+// Input:["move","it","away","from","the","street"]
+// Output: "move it away from the, street"
 //
 
 const arrToStr = (arr) => {
-    // write your code here
-}
+  // write your code here
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -146,9 +137,32 @@ const arrToStr = (arr) => {
 //
 
 const letterCounter = (str) => {
-    // write your code here
-}
+  // write your code here
+};
 // -------------------------------------------------------------------------------------------------------
+let arrx = [3, 2, 3, 3, 6, 3, 5, 5, 8, 8, 6, 6, 6, 6];
 
+function equalizeArray(arr) {
+    const frequency = {};
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i];
+      if (frequency[element]) {
+        frequency[element]++;
+        console.log(frequency);
+      } else {
+        frequency[element] = 1;
+      }
+    }
+    
+    // Find the maximum frequency
+    let maxFrequ = 0;
+    for (const element in frequency) {
+        maxFrequ = Math.max(maxFrequ, frequency[element]);
+    }
+    
+    const minNumOfDelet = arr.length - maxFrequ;
+    
+    return minNumOfDelet;
+  }
+  console.log(equalizeArray(arrx));
 
-module.exports = { LastWord, LastWord_2, replaceWords, arrToStr, letterCounter };
