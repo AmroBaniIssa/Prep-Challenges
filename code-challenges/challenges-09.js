@@ -168,7 +168,7 @@ function birthdayCakeCandles(candles) {
   }
   return y;
 }
-console.log(birthdayCakeCandles(candles));
+// console.log(birthdayCakeCandles(candles));
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 04:
