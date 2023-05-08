@@ -144,25 +144,25 @@ function gradesAvg(arr) {
   function avg(element, i) {
     // console.log(element.gradsList[i]);
     // console.log(element.gradsList);
-    let gradsListArr = element.gradsList;
+    // let gradsListArr = element.gradsList;
   let sum = 0;
 
-    for (i = 0; i <= gradsListArr.length; i++) {
-      sum = sum + gradsListArr[i];
+    for (i = 0; i <= arr.gradsListArr.length; i++) {
+      sum = sum + arr.gradsListArr[i];
       
-      avgOfArray = sum/ gradsListArr.length
-      gradsListArr.avgr[i]=avgOfArray;
-      console.log(sum);
-      console.log(avgOfArray);
-      console.log(gradsListArr);
-
     }
+      avgOfArray = sum/ arr.gradsListArr.length;
+      // gradsListArr.avgr[i]=avgOfArray;
+      // console.log(sum);
+      // console.log(avgOfArray);
+      // console.log(gradsListArr);
+
     // answerx.push(x);
     // console.log([firstN+" "+lastN])
     // console.log(answerx);
     // console.log(element.gradsList[i]);
+    return {students,avg:avgOfArray}
 }
-return answerx;
 }
 console.log(gradesAvg(students));
 // -------------------------------------------------------------------------------------------------------
