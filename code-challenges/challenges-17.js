@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 01:
@@ -6,7 +6,7 @@
 //
 // referring to the given examples find out the pattern used and
 // Write a function that takes 2 integers and prints the patterns using recursion
-// 
+//
 // Input: 16, 5
 // Output: [16, 11, 6, 1, -4, 1, 6, 11, 16]
 //
@@ -14,15 +14,30 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
-const recursionPattern = (int1, int2) => {
-    // write your code here
-}
+const recursionPattern = (int1, int2,) => {
+  // write your code here
+  let array = [int1];
+
+  function test(num) {
+    if (num <= 0) {
+      return;
+    }
+    array.push(array[array.length - 1] - int2);
+    test(num - 1);
+    array.push(array[array.length - 1] + int2);
+  }
+
+  test(Math.abs(Math.floor(int1 / int2)+1));
+  return array;
+};
+console.log(recursionPattern(16, 5));
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 02:
 // Required:
-// 
+//
 // Write a function that takes a string (HTML tag)
 // and extracts the link from the HTML tag
 //
@@ -31,40 +46,60 @@ const recursionPattern = (int1, int2) => {
 //
 // Note:
 //  Assume that links end with .com, .org or .net
-// 
+//
 
 const filterLinks = (str) => {
-    // write your code here
-}
+  
+  const hrefStart = str.indexOf('href="');
+
+  const linkStart = hrefStart + 6; // length of "href=" is 6
+  const linkEnd = str.indexOf('"', linkStart);
+  const link = str.substring(linkStart, linkEnd);
+
+  if (link.startsWith("http://")) {
+    return link.substr(link.indexOf("://") + 3);
+  }
+
+  return link;
+};
+console.log(
+  filterLinks(
+    '<a href="http://www.hackerrank.com"><h1><b>HackerRank</b></h1></a>'
+  )
+);
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 03:
 // Required:
-// 
+//
 // A phrase is considered palindrome if, after converting all uppercase letters into lowercase letters
 // and removing all non-alphanumeric characters, it reads the same forward and backward.
 // Alphanumeric characters include letters and numbers.
 // Given a string s, return true if it is a palindrome, or false otherwise.
-// 
+//
 // Input: s = "A man, a plan, a canal: Panama"
 // Output: true
 // as you can see "amanaplanacanalpanama" is a palindrome.
 //
 
 const isPalindrome = (str) => {
-    // write your code here
-}
+  // write your code here
+  const String1 = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const String2 = String1.split('').reverse().join('');
+
+  return String1 === String2;
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 04:
 // Optional:
-// 
+//
 //  Write a function that takes 2 arguments, one is a string and the other is an array
 //  the function should return a boolean than indicates if both have the same pattern
 //
-//  EX: 
+//  EX:
 //  Input: "abba", ['cat', 'dog', 'dog', 'cat']
 //  output: true
 //
@@ -77,9 +112,8 @@ const isPalindrome = (str) => {
 //
 
 const samePattern = (str, arr) => {
-    // write your code here
-}
+  // write your code here
+};
 // -------------------------------------------------------------------------------------------------------
-
 
 module.exports = { recursionPattern, filterLinks, isPalindrome, samePattern };
