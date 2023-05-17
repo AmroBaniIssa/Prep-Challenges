@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function appendAndDelete(s, t, k) {\n    // check if k is too long\n  if (k >= s.length + t.length) {\n    return \"Yes\";\n  }\n\n   // calculate the common characrers\n  let commonLength = 0;\n  for (let i = 0; i < Math.min(s.length, t.length); i++) {\n    if (s[i] !== t[i]) {\n      break;\n    }\n    commonLength++;\n  }\n  // calculate the requierd operatins\n  const operationsRequired = s.length + t.length - 2 * commonLength;\n//   check if k === or bigger than the requierd operations \n  if (operationsRequired % 2 === k % 2 && operationsRequired <= k) {\n    return \"Yes\";\n  }\n  else {\n    return \"No\";\n  }\n}"
             ],
             "outputs": []
         },
