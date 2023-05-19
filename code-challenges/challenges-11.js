@@ -84,28 +84,28 @@ console.log(fullName(Input1))
 //  
 
 // Input:
-// var students = [
-// 	{
-// 			firstName: 'Adam',
-//      lastName: 'Anderson',
-// 			gradsList: [20, 50, 13, 11, 2, 45, 60, 29]
-// },
-// {
-// 			firstName: 'Ben',
-//      lastName: 'Zeller',
-// 			gradsList: [20, 10, 11, 11, 2, 5, 3, 2]
-// },
-// {
-// 			firstName: 'Peter',
-//      lastName: 'Mccord',
-// 	    gradsList: [62, 50, 80, 90, 39, 45, 60, 50]
-// },
-// {
-// 			firstName: 'Fred',
-//      lastName: 'Sagar',
-// 			gradsList: [20, 10, 18, 11, 2, 20, 3, 10]
-// }
-// ]
+var students = [
+	{
+			firstName: 'Adam',
+     lastName: 'Anderson',
+			gradsList: [20, 50, 13, 11, 2, 45, 60, 29]
+},
+{
+			firstName: 'Ben',
+     lastName: 'Zeller',
+			gradsList: [20, 10, 11, 11, 2, 5, 3, 2]
+},
+{
+			firstName: 'Peter',
+     lastName: 'Mccord',
+	    gradsList: [62, 50, 80, 90, 39, 45, 60, 50]
+},
+{
+			firstName: 'Fred',
+     lastName: 'Sagar',
+			gradsList: [20, 10, 18, 11, 2, 20, 3, 10]
+}
+]
 //
 // Output:
 // [
@@ -137,8 +137,21 @@ console.log(fullName(Input1))
 // -------------
 
 function gradesAvg(arr) {
-    // write your code here
+  // write your code here\
+  const studentsAvg = arr.map(student => {
+    const sum = student.gradsList.reduce((total, grade) => total + grade, 0);
+    const avg = sum / student.gradsList.length;
+  
+    return {
+      ...student,
+      avg: avg,
+    };
+  });
+  
+  return studentsAvg
 }
+
+console.log(gradesAvg(students));
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
