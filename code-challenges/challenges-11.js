@@ -137,33 +137,19 @@ const students = [
 
 function gradesAvg(arr) {
   // write your code here\
-  const answerx = [];
-//   let sum = 0;
-  let avgOfArray =0;
-  const answer = arr.map(avg);
-  function avg(element, i) {
-    // console.log(element.gradsList[i]);
-    // console.log(element.gradsList);
-    // let gradsListArr = element.gradsList;
-  let sum = 0;
-
-    for (i = 0; i <= arr.gradsListArr.length; i++) {
-      sum = sum + arr.gradsListArr[i];
-      
-    }
-      avgOfArray = sum/ arr.gradsListArr.length;
-      // gradsListArr.avgr[i]=avgOfArray;
-      // console.log(sum);
-      // console.log(avgOfArray);
-      // console.log(gradsListArr);
-
-    // answerx.push(x);
-    // console.log([firstN+" "+lastN])
-    // console.log(answerx);
-    // console.log(element.gradsList[i]);
-    return {students,avg:avgOfArray}
+  const studentsAvg = arr.map(student => {
+    const sum = student.gradsList.reduce((total, grade) => total + grade, 0);
+    const avg = sum / student.gradsList.length;
+  
+    return {
+      ...student,
+      avg: avg,
+    };
+  });
+  
+  return studentsAvg
 }
-}
+
 console.log(gradesAvg(students));
 // -------------------------------------------------------------------------------------------------------
 
